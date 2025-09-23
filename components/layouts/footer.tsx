@@ -8,6 +8,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+import helper from '@/lib/helper'
+
 export default function Footer() {
     return (
         <footer className="mt-auto bg-success">
@@ -77,17 +79,16 @@ export default function Footer() {
                                                 <Phone className="size-[18px] text-teal" />
 
                                                 <Link
-                                                    href="tel:+1 708-359-5968"
+                                                    href={"tel:" + helper.siteDetails.phone}
                                                     className="font-medium transition hover:opacity-80"
                                                 >
-                                                    +1 708-359-5968
+                                                   {helper.siteDetails.phone}
                                                 </Link>
                                             </div>
                                             <div className="flex gap-2.5">
                                                 <MapPin className="size-[18px] text-teal" />
                                                 <p className="font-medium">
-                                                    82 Flinderation Road,
-                                                    Bridgeview, IL 60455
+                                                    {helper.siteDetails.address}
                                                 </p>
                                             </div>
                                         </div>
