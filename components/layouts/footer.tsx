@@ -26,7 +26,7 @@ export default function Footer() {
                                         <Image
                                             src="/images/footer-logo.svg"
                                             alt="Bike Store"
-                                            className="w-28 shrink-0 lg:w-[140px]"
+                                            className="logo-dim"
                                             width={140}
                                             height={28}
                                         />
