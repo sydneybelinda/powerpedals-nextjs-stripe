@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=fallback')
+layer(base);
+
+@import 'tailwindcss';
+@tailwindcss /forms;
+
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
+
+@theme {
+    --breakpoint-*: initial;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1472px;
+
+    --font-*: initial;
+    --font-roboto: Roboto Serif;
+    --font-aeonik: Aeonik, sans-serif;
+
+    --color-*: initial;
+    --color-transparent: transparent;
+    --color-black: #1d1d1d;
+    --color-white: #ffffff;
+    --color-gray: #605e5c;
+    --color-gray-100: #f1f1f1;
+    --color-gray-200: #edfafd;
+    --color-success: #00b377;
+    --color-success-100: #ebffee;
+    --color-success-200: #f0fff3;
+    --color-bleach: #eee5d3;
+    --color-bleach-100: #fffaf4;
+    --color-bleach-200: #efeeeb;
+    --color-purple: #e3e5fc;
+    --color-purple-100: #e9f0ff;
+    --color-purple-200: #f3f7ff;
+    --color-teal: #007382;
+    --color-sky-blue: #d7f5fb;
+
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+}
+@utility container {
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+@layer components {
+    .nav-links {
+        @apply hover:text-gray inline-flex w-full py-2 text-sm font-medium whitespace-nowrap text-black uppercase transition lg:w-auto xl:text-base;
+    }
+    .nav-links.active {
+        @apply text-gray;
+    }
+    .footer-link {
+        @apply text-gray inline-flex text-sm transition hover:text-black xl:text-base/[19px];
+    }
+}
+
+@utility prose {
+    color: #605e5c;
+    font-weight: 400;
+}
+@utility prose-headings {
+    font-weight: 500 !important;
+    color: #1d1d1d;
+}
+@utility prose-lg {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+@layer base {
+    @font-face {
+        font-family: 'Aeonik';
+        src:
+            url('/fonts/aeonik-regular.woff2') format('woff2'),
+            url('/fonts/aeonik-regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: fallback;
+    }
+    @font-face {
+        font-family: 'Aeonik';
+        src:
+            url('/fonts/aeonik-medium.woff2') format('woff2'),
+            url('/fonts/aeonik-medium.woff') format('woff');
+        font-weight: 500;
+        font-style: medium;
+        font-display: fallback;
+    }
+    @font-face {
+        font-family: 'Aeonik';
+        src:
+            url('/fonts/aeonik-bold.woff2') format('woff2'),
+            url('/fonts/aeonik-bold.woff') format('woff');
+        font-weight: 700;
+        font-style: bold;
+        font-display: fallback;
+    }
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+}
+
+.swiper-button-disabled {
+    @apply opacity-60 hover:cursor-default!;
+}
+
+/* Feedback-Swiper css */
+.marquee-swiper .swiper-wrapper {
+    @apply flex ease-linear;
+}
+
+/* Our stroy swiper */
+.our-story-swiper .swiper-slide-active .year-box > svg {
+    @apply text-success transition-all duration-1000;
+}
+.our-story-swiper .swiper-slide-active .year-box .year-text {
+    @apply text-white transition-all duration-1000;
+}
+.our-story-swiper .swiper-slide-active .story-active-shadow {
+    @apply block;
+}
+/* Cycle detail swiper */
+.cycle-detail-swiper .swiper-pagination {
+    @apply absolute inset-x-0 bottom-5 flex items-center justify-center gap-2.5 sm:bottom-10 xl:bottom-[50px];
+}
+.cycle-detail-swiper .swiper-pagination .swiper-pagination-bullet {
+    @apply size-2! shrink-0 rounded-full! bg-black/10! lg:size-2.5!;
+}
+.cycle-detail-swiper .swiper-pagination .swiper-pagination-bullet-active {
+    @apply bg-black!;
+}
