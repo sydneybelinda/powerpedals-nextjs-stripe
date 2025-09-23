@@ -412,7 +412,7 @@ export default function Footer() {
             </div>
             <div className="px-2 py-5 lg:py-10">
                 <Image
-                    src="/images/footer-logo2.svg"
+                    src="/images/logo.svg"
                     alt="Bike Store"
                     className="mx-auto h-full w-60 lg:w-96 xl:w-[693px]"
                     width={693}
