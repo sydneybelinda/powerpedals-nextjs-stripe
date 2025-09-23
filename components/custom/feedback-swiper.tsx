@@ -19,7 +19,7 @@ export default function FeedbackSwiper() {
                     <h2 className="relative z-10 mx-auto w-full max-w-[740px] px-4 text-center text-2xl font-bold md:text-5xl/[60px] lg:text-6xl/[70px] 2xl:text-[70px]/[84px]">
                         Customer stories and feedback for&nbsp;
                         <span className="font-roboto font-medium italic">
-                            Cyclify
+                            PowerPedals
                         </span>
                     </h2>
                 </div>
@@ -72,7 +72,7 @@ export default function FeedbackSwiper() {
                                     &quot;
                                     <span className="text-teal">
                                         I’m thrilled with my new bike from
-                                        Cyclify.
+                                        PowerPedals.
                                     </span>
                                     The team provided excellent advice and
                                     service. It’s been a great upgrade for my
@@ -102,7 +102,7 @@ export default function FeedbackSwiper() {
                                 <p className="line-clamp-4 text-sm/5 font-medium text-gray lg:text-base/[26px]">
                                     &quot;
                                     <span className="text-teal">
-                                        Amazing bike shop! Cyclify.
+                                        Amazing bike shop! PowerPedals.
                                     </span>
                                     The staff were knowledgeable and helped me
                                     find the perfect ride. Highly satisfied with
@@ -132,7 +132,7 @@ export default function FeedbackSwiper() {
                                 <p className="line-clamp-4 text-sm/5 font-medium text-gray lg:text-base/[26px]">
                                     &quot;
                                     <span className="text-teal">
-                                        Amazing bike shop! Cyclify.
+                                        Amazing bike shop! PowerPedals.
                                     </span>
                                     The staff were knowledgeable and helped me
                                     find the perfect ride. Highly satisfied with
@@ -221,7 +221,7 @@ export default function FeedbackSwiper() {
                                 <p className="line-clamp-4 text-sm/5 font-medium text-gray lg:text-base/[26px]">
                                     &quot;
                                     <span className="text-teal">
-                                        Amazing bike shop! Cyclify.
+                                        Amazing bike shop! PowerPedals.
                                     </span>
                                     The staff were knowledgeable and helped me
                                     find the perfect ride. Highly satisfied with
@@ -337,7 +337,7 @@ export default function FeedbackSwiper() {
                                     &quot;
                                     <span className="text-teal">
                                         I’m thrilled with my new bike from
-                                        Cyclify.
+                                        PowerPedals.
                                     </span>
                                     The team provided excellent advice and
                                     service. It’s been a great upgrade for my
@@ -367,7 +367,7 @@ export default function FeedbackSwiper() {
                                 <p className="line-clamp-4 text-sm/5 font-medium text-gray lg:text-base/[26px]">
                                     &quot;
                                     <span className="text-teal">
-                                        Amazing bike shop! Cyclify.
+                                        Amazing bike shop! PowerPedals.
                                     </span>
                                     The staff were knowledgeable and helped me
                                     find the perfect ride. Highly satisfied with
@@ -397,7 +397,7 @@ export default function FeedbackSwiper() {
                                 <p className="line-clamp-4 text-sm/5 font-medium text-gray lg:text-base/[26px]">
                                     &quot;
                                     <span className="text-teal">
-                                        Amazing bike shop! Cyclify.
+                                        Amazing bike shop! PowerPedals.
                                     </span>
                                     The staff were knowledgeable and helped me
                                     find the perfect ride. Highly satisfied with
@@ -486,7 +486,7 @@ export default function FeedbackSwiper() {
                                 <p className="line-clamp-4 text-sm/5 font-medium text-gray lg:text-base/[26px]">
                                     &quot;
                                     <span className="text-teal">
-                                        Amazing bike shop! Cyclify.
+                                        Amazing bike shop! PowerPedals.
                                     </span>
                                     The staff were knowledgeable and helped me
                                     find the perfect ride. Highly satisfied with

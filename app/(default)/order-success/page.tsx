@@ -3,11 +3,11 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-    title: 'Order success | Cyclify',
+    title: 'Order success | PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'Order success | cyclify',
+        title: 'Order success | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL + '/order-success',
         type: 'website',

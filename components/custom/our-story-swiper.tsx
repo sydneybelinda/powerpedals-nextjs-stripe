@@ -12,7 +12,7 @@ const ourStory: IOurStory[] = [
         id: 1,
         name: 'The Beginning',
         description:
-            'Cyclify Bike Store was founded with a passion for bringing the joy of cycling to our local community.',
+            'PowerPedals Bike Store was founded with a passion for bringing the joy of cycling to our local community.',
         year: '2013',
     },
     {
@@ -40,7 +40,7 @@ const ourStory: IOurStory[] = [
         id: 6,
         name: 'The Beginning',
         description:
-            'Cyclify Bike Store was founded with a passion for bringing the joy of cycling to our local community.',
+            'PowerPedals Bike Store was founded with a passion for bringing the joy of cycling to our local community.',
         year: '2020',
     },
     {

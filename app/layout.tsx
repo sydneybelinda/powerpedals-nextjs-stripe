@@ -4,7 +4,7 @@ import './globals.css'
 import helper from '@/lib/helper'
 
 export const metadata: Metadata = {
-    title: 'Cyclify',
+    title: 'PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,

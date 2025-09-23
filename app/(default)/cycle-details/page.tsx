@@ -10,11 +10,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-    title: 'Cycle details | Cyclify',
+    title: 'Cycle details | PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'Cycle details | Cyclify',
+        title: 'Cycle details | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL + '/cycle-details',
         type: 'website',
@@ -143,18 +143,18 @@ export default function CycleDetails() {
                     <div className="grid gap-4 text-base sm:grid-cols-2 lg:grid-cols-3 xl:gap-7">
                         <div className="flex items-center gap-4 rounded-[10px] bg-[#F7F7F7] px-4 py-6 lg:p-7">
                             <Image
-                                src="/images/cyclify-assurance.svg"
-                                alt="Cyclify Assurance"
+                                src="/images/PowerPedals-assurance.svg"
+                                alt="PowerPedals Assurance"
                                 className="size-10 shrink-0 md:size-[60px]"
                                 width={60}
                                 height={60}
                             />
                             <div className="space-y-2">
                                 <h4 className="text-lg/[22px] font-medium">
-                                    Cyclify Assurance
+                                    PowerPedals Assurance
                                 </h4>
                                 <p className="text-gray">
-                                    100% genuine products. with Cyclify
+                                    100% genuine products. with PowerPedals
                                     Guarantee.
                                 </p>
                             </div>
@@ -162,7 +162,7 @@ export default function CycleDetails() {
                         <div className="flex items-center gap-4 rounded-[10px] bg-[#F7F7F7] px-4 py-6 lg:p-7">
                             <Image
                                 src="/images/emi.svg"
-                                alt="Cyclify Assurance"
+                                alt="PowerPedals Assurance"
                                 className="size-10 shrink-0 md:size-[60px]"
                                 width={60}
                                 height={60}
@@ -180,7 +180,7 @@ export default function CycleDetails() {
                         <div className="flex items-center gap-4 rounded-[10px] bg-[#F7F7F7] px-4 py-6 lg:p-7">
                             <Image
                                 src="/images/payment.svg"
-                                alt="Cyclify Assurance"
+                                alt="PowerPedals Assurance"
                                 className="size-10 shrink-0 md:size-[60px]"
                                 width={60}
                                 height={60}
@@ -354,7 +354,7 @@ export default function CycleDetails() {
                             Specifications
                         </h2>
                         <p className="text-gray md:text-xl/6">
-                            For the Cyclify Bike Store
+                            For the PowerPedals Bike Store
                         </p>
                     </div>
                     <div className="mt-10 md:mt-14">

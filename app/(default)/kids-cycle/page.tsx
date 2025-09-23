@@ -19,11 +19,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-    title: 'Kids cycle | Cyclify',
+    title: 'Kids cycle | PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'Kids cycle | Cyclify',
+        title: 'Kids cycle | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL + '/kids-cycle',
         type: 'website',

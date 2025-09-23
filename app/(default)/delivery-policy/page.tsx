@@ -3,11 +3,11 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: 'Delivery Policy | Cyclify',
+    title: 'Delivery Policy | PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'Delivery Policy | Cyclify',
+        title: 'Delivery Policy | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL + '/delivery-policy',
         type: 'website',
@@ -31,7 +31,7 @@ export default function DeliveryPolicy() {
 
             <div className="prose mx-auto w-full max-w-[1142px] px-4 py-12 lg:prose-lg prose-headings:font-medium prose-headings:text-black prose-p:mt-2.5 prose-ol:marker:text-xl prose-ol:marker:font-medium prose-ol:marker:text-black prose-li:ps-0 lg:py-20 lg:prose-h2:text-xl">
                 <p className="font-medium">
-                    At Cyclify Bike Store, your privacy is important to us. This
+                    At PowerPedals Bike Store, your privacy is important to us. This
                     Privacy Policy outlines how we collect, use, and protect
                     your personal information when you visit our website or
                     engage with our services.
@@ -43,7 +43,7 @@ export default function DeliveryPolicy() {
                         <div>
                             <h5>Personal Information:</h5>
                             <p>
-                                Cyclify Bike Store grants you a non-exclusive,
+                                PowerPedals Bike Store grants you a non-exclusive,
                                 non-transferable, and revocable license to use
                                 and modify the bicycles, accessories, and
                                 related products (&quot;Products&quot;)
@@ -152,7 +152,7 @@ export default function DeliveryPolicy() {
                             your personal information at any time. If you wish
                             to exercise these rights or have any questions about
                             our Privacy Policy, please contact us at
-                            contact@cyclifybikestore.
+                            contact@PowerPedalsbikestore.
                         </p>
                     </li>
                     <li>
@@ -176,7 +176,7 @@ export default function DeliveryPolicy() {
                     <p className="leading-5! mb-2.5 lg:mb-5">
                         Email address:&nbsp;&nbsp;
                         <span className="font-medium text-black">
-                            contact@cyclifybikestore.com
+                            contact@PowerPedalsbikestore.com
                         </span>
                     </p>
                     <p className="leading-5! mb-2.5 lg:mb-5">
@@ -198,7 +198,7 @@ export default function DeliveryPolicy() {
                 </p>
                 <p className="mb-0!">Sincerely,</p>
                 <p className="font-medium text-black">
-                    The Cyclify Bike Store Team
+                    The PowerPedals Bike Store Team
                 </p>
             </div>
 

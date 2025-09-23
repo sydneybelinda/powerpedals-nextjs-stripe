@@ -6,11 +6,11 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: 'Blogs | Cyclify',
+    title: 'Blogs | PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'Blogs | Cyclify',
+        title: 'Blogs | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL + '/blogs',
         type: 'website',

@@ -389,7 +389,7 @@ export default function Footer() {
                         <div className="container mx-auto flex w-full flex-col items-center justify-between gap-3 text-sm/4 font-medium text-black lg:flex-row xl:max-w-[1500px] xl:px-[30px]">
                             <p className="order-2 text-center md:order-1 md:text-left">
                                 © 2022-{new Date().getFullYear()}
-                                &nbsp; Cyclify, Inc. All rights reserved.
+                                &nbsp; PowerPedals, Inc. All rights reserved.
                             </p>
                             <div className="order-1 flex gap-[30px] md:order-2">
                                 <Link

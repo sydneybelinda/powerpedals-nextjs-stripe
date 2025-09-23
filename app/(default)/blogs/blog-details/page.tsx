@@ -7,11 +7,11 @@ import Link from 'next/link'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: 'Blog details | Cyclify',
+    title: 'Blog details | PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'Blog details | Cyclify',
+        title: 'Blog details | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL + '/blog-details',
         type: 'website',
@@ -74,7 +74,7 @@ export default function BlogDetails() {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Eum corporis obcaecati odit quas labore sequi
                         officia&nbsp;
-                        <Link href="/">www.cyclify.com</Link>
+                        <Link href="/">www.PowerPedals.com</Link>
                         &nbsp; fuga porro doloribus expedita optio repellendus
                         modi dolorum aspernatur aliquid ad, neque sed tenetur.
                     </p>

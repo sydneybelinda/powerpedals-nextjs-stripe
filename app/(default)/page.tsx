@@ -19,11 +19,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-    title: 'Home | Cyclify',
+    title: 'Home | PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'Home | Cyclify',
+        title: 'Home | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL,
         type: 'website',
@@ -280,7 +280,7 @@ export default function Home() {
                     __html: `{
                         "@context": "https://schema.org",
                         "@type": "WebSite",
-                        "name": "Cyclify",
+                        "name": "PowerPedals",
                         "url": "${process.env.NEXT_PUBLIC_APP_URL}",
                         "description": "Your journey to the genuine begins here.",
                         "inLanguage": "en",

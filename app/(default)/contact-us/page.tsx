@@ -10,11 +10,11 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-    title: 'Contact us | Cyclify',
+    title: 'Contact us | PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'Contact us | Cyclify',
+        title: 'Contact us | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL + '/contact-us',
         type: 'website',
@@ -141,10 +141,10 @@ export default function ContactUs() {
                                     Email address
                                 </div>
                                 <Link
-                                    href="mailto:contact@cyclifybikestore.com"
+                                    href="mailto:contact@PowerPedalsbikestore.com"
                                     className="inline-block transition hover:opacity-70"
                                 >
-                                    contact@cyclifybikestore.com
+                                    contact@PowerPedalsbikestore.com
                                 </Link>
                             </div>
                             <div className="space-y-2.5 py-5 md:py-7">

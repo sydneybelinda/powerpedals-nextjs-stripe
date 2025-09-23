@@ -52,9 +52,9 @@ export default function Header() {
                     <div className="shrink-0 lg:w-1/4">
                         <Link href="/">
                             <Image
-                                src="/images/logo.svg"
+                                src="/images/logo.png"
                                 alt="Bike Store"
-                                className="w-28 shrink-0 lg:w-[140px]"
+                                className="logo-dim"
                                 width={140}
                                 height={28}
                             />

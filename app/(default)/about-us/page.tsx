@@ -6,11 +6,11 @@ import helper from '@/lib/helper'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'About Us | Cyclify',
+    title: 'About Us | PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'About us | cyclify',
+        title: 'About us | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL + '/about-us',
         type: 'website',
@@ -30,7 +30,7 @@ export default function AboutUs() {
                             <h1 className="mb-3 text-2xl font-bold md:text-5xl/[60px] lg:mb-5 lg:text-6xl/[70px] xl:text-[70px]/[84px]">
                                 History of &nbsp;
                                 <span className="font-roboto font-medium italic">
-                                    Cyclify
+                                    PowerPedals
                                 </span>
                             </h1>
                             <h2 className="font-medium italic lg:text-xl/6">
@@ -38,7 +38,7 @@ export default function AboutUs() {
                             </h2>
                         </div>
                         <p className="max-w-[500px] lg:text-lg/[26px]">
-                            At Cyclify, you&apos;ll discover a handpicked
+                            At PowerPedals, you&apos;ll discover a handpicked
                             selection of bicycles, motorcycles, gear, and
                             accessories from top brands known for their quality
                             and innovation. We provide everything you need to
@@ -108,7 +108,7 @@ export default function AboutUs() {
                             </div>
                             <div className="space-y-3 text-gray lg:space-y-5 lg:text-lg/[30px]">
                                 <p>
-                                    Since 1995, Cyclify Bike Store has been all
+                                    Since 1995, PowerPedals Bike Store has been all
                                     about the joy of cycling. Our mission is to
                                     help you find the perfect bike, whether
                                     you’re new to riding or a seasoned pro. We
@@ -208,7 +208,7 @@ export default function AboutUs() {
                             </div>
                             <div className="space-y-3 text-gray lg:space-y-5 lg:text-lg/[30px]">
                                 <p>
-                                    At Cyclify Bike Store, we’re passionate
+                                    At PowerPedals Bike Store, we’re passionate
                                     about more than just bicycles—we’re
                                     dedicated to the journey that comes with
                                     them. Whether you&apos;re an avid cyclist, a
@@ -229,7 +229,7 @@ export default function AboutUs() {
                                     you every step of the way.
                                 </p>
                                 <p>
-                                    At Cyclify Bike Store, it&apos;s not just
+                                    At PowerPedals Bike Store, it&apos;s not just
                                     about selling bikes—it&apos;s about creating
                                     a community of riders who share the love of
                                     the open road. Join us, and let&apos;s ride

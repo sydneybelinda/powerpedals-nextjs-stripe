@@ -151,3 +151,10 @@ layer(base);
 .cycle-detail-swiper .swiper-pagination .swiper-pagination-bullet-active {
     @apply bg-black!;
 }
+
+.logo-dim {
+    width:calc(var(--spacing) * 48);
+}
+.bg-success {
+    background-color: #24b3df;
+}

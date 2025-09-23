@@ -1,8 +1,8 @@
 const helper = {
     openGraphData: {
-        title: 'Cyclify',
+        title: 'PowerPedals',
         description: 'Your journey to the genuine begins here.',
-        siteName: 'Cyclify',
+        siteName: 'PowerPedals',
         type: 'website',
         images: [{ url: `${process.env.NEXT_PUBLIC_APP_URL}/images/logo.svg` }],
     },
@@ -10,7 +10,7 @@ const helper = {
         return `{
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Cyclify",
+            "name": "PowerPedals",
             "url": "${process.env.NEXT_PUBLIC_APP_URL}",
             "logo": "${process.env.NEXT_PUBLIC_APP_URL}/images/logo.svg"
             }`

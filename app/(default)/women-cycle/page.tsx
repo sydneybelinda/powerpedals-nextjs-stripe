@@ -19,11 +19,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-    title: 'women cycle | Cyclify',
+    title: 'women cycle | PowerPedals',
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'women cycle | Cyclify',
+        title: 'women cycle | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL + '/women-cycle',
         type: 'website',
