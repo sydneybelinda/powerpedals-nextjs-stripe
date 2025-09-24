@@ -1,5 +1,5 @@
 'use client'
-
+import { useShoppingCart } from 'use-shopping-cart';
 import AddcartDrawer from '@/components/custom/add-cart-drawer'
 import NavLinks from '@/components/layouts/nav-links'
 import { Button } from '@/components/ui/button'
@@ -32,6 +32,7 @@ export default function Header() {
     const pathName = usePathname()
     const [isOpen, setIsOpen] = useState(false)
     const [isSearchOpen, setIsSearchOpen] = useState(false)
+      const { addItem, cartDetails, totalPrice } = useShoppingCart();
 
     useEffect(() => {
         setIsOpen(false)
@@ -104,22 +105,49 @@ export default function Header() {
                             </Popover>
 
                             {/* .Add card drawer */}
+
+                      
+                        
+                                      { (Object.keys(cartDetails).length==0) ? 
                             <AddcartDrawer
+
+                            
                                 button={
                                     <button
                                         type="button"
                                         className="relative shrink-0 text-black transition hover:text-gray/90"
                                     >
-                                        <span className="absolute -right-2 -top-2 grid h-[18px] min-w-[18px] place-content-center rounded-full bg-gray px-1.5 py-0.5 text-sm font-bold text-white">
+                                        
+                                        {/* <span className="absolute -right-2 -top-2 grid h-[18px] min-w-[18px] place-content-center rounded-full bg-gray px-1.5 py-0.5 text-sm font-bold text-white">
                                             1
-                                        </span>
+                                        </span> */}
                                         <ShoppingBag className="size-5 shrink-0" />
                                         <span className="sr-only">
                                             Add cart
                                         </span>
                                     </button>
                                 }
-                            />
+                            /> :          <AddcartDrawer
+
+                            
+                                button={
+                                    <button
+                                        type="button"
+                                        className="relative shrink-0 text-black transition hover:text-gray/90"
+                                    >
+                                        
+                                        <span className="absolute -right-2 -top-2 grid h-[18px] min-w-[18px] place-content-center rounded-full bg-gray px-1.5 py-0.5 text-sm font-bold text-white">
+                                            { Object.keys(cartDetails).length }
+                                        </span> 
+                                        <ShoppingBag className="size-5 shrink-0" />
+                                        <span className="sr-only">
+                                            Add cart
+                                        </span>
+                                    </button>
+                                }
+                            /> 
+}
+
 
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
@@ -180,6 +208,7 @@ export default function Header() {
                                     </SheetContent>
                                 </Sheet>
                             </div>
+                            
                         </div>
                         <Link
                             href="/cycle-collections"

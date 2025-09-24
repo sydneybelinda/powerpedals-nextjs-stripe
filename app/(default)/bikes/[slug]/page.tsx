@@ -1,3 +1,6 @@
+import prisma from "@/lib/prisma";
+import { notFound } from "next/navigation";
+
 import AddcartDrawer from '@/components/custom/add-cart-drawer'
 import CycleDetailSwiper from '@/components/custom/cycle-detail-swiper'
 import FeedbackSwiper from '@/components/custom/feedback-swiper'
@@ -35,13 +38,25 @@ const item = {
     quantity: 10
 }
 
-export default function CycleDetails() {
+
+
+export default  async  function CycleDetails({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const bike = await prisma.bike.findFirst({
+    where: { slug: slug}
+  });
+
+ if (!bike) {
+    notFound();
+  }
+
+
     return (
         <>
             <div className="flex flex-col lg:flex-row">
                 <CycleDetailSwiper />
 <CycleDetailItem
-item={item}
+item={bike}
 
 
 />

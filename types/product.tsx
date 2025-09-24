@@ -8,12 +8,26 @@ export type IVariant = {
     color: string
 }
 
+export type Ibike = {
+    id: number
+    name: string
+    price: number
+    currency: string
+    stock: number
+    weight: number
+    image: string
+    alt: string
+    slug: string
+    description: string
+}
+
 
 export type ICard = {
     id: number
     name: string
     image: string
     alt: string
+    slug: string
     description: string
 }
 

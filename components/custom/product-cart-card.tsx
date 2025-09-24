@@ -1,10 +1,13 @@
+"use client"
 import ProductCounter from '@/components/custom/product-counter'
+import { useShoppingCart } from 'use-shopping-cart';
 import { Button } from '@/components/ui/button'
 import {  IProductcartcard } from '@/types/product'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function ProductCartCard({ cartCard }: { cartCard: IProductcartcard }) {
+    const { cartDetails, removeItem, totalPrice } = useShoppingCart();
     return (
         <div className="flex gap-5 py-[30px] lg:items-center">
             <Link
@@ -32,19 +35,21 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
                            {cartCard?.name}
                         </Link>
                         <h3 className="line-clamp-2 shrink-0 text-lg/[22px] font-medium lg:hidden lg:text-xl/6">
-                            {cartCard?.price}
+                            { cartCard?.price}
                         </h3>
                     </div>
                     <div className="flex gap-1.5">
                         <div className="inline-flex h-full rounded-md border border-black/10 px-2 lg:rounded-xl lg:px-3">
-                            <ProductCounter />
+                            <ProductCounter
+                            cartCard={cartCard} />
                         </div>
                         <Button
                             type="button"
                             variant="outline"
                             className="h-auto border-black/10 p-1.5 px-3 py-1 text-sm text-gray lg:hidden lg:text-base/[19px]"
+                            onClick={() => removeItem(cartCard?.id)}
                         >
-                            Remove
+                            Remove Lol
                         </Button>
                     </div>
                 </div>
@@ -56,8 +61,9 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
                         type="button"
                         variant="outline"
                         className="hidden border-black/10 text-sm text-gray lg:block lg:text-base/[19px]"
+                        onClick={() => removeItem(cartCard?.id)}
                     >
-                        Remove
+                        Remove blah
                     </Button>
                 </div>
             </div>

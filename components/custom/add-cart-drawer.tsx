@@ -1,6 +1,8 @@
 'use client'
+import { useShoppingCart } from 'use-shopping-cart';
 import ProductCartCard from '@/components/custom/product-cart-card'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 import {
     Sheet,
     SheetContent,
@@ -30,12 +32,15 @@ const productCartCard: IProductcartcard[] = [
 ]
 
 export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
+    const { cartDetails, removeItem, shouldDisplayCart, cartCount, totalPrice } = useShoppingCart();
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
 
     useEffect(() => {
         setIsOpen(false)
     }, [pathname])
+
+ //   console.log(cartDetails)
 
     return (
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -63,9 +68,31 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
                             <X className="size-5 shrink-0 lg:size-6" />
                         </button>
                     </div>
+                    
 
                     {/* Empty cart */}
-                    {/* <div className='p-5 min-h-[calc(100vh-97px)] flex items-center justify-center text-center flex-col '>
+                    {/*  */}
+
+                    {/* add cart procduct */}
+                    <div className="flex grow flex-col">
+                        <div className="grow px-4 lg:px-10">
+                            <div className="divide-y divide-gray-100">
+{ (Object.keys(cartDetails).length > 0) ? 
+
+Object.keys(cartDetails).map((key) => {
+          const item = cartDetails[key];
+          return (
+                    <ProductCartCard 
+                        key={key}
+                        cartCard={item} 
+                        />
+           );
+        })
+
+
+
+     : 
+    <div className='p-5 min-h-[calc(100vh-97px)] flex items-center justify-center text-center flex-col '>
                         <div className="max-w-32">
                             <Image
                                 src="/images/my-cart.png"
@@ -85,24 +112,25 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
                                 </Button>
                             </Link>
                         </div>
-                    </div>  */}
+                    </div> 
+    }
 
-                    {/* add cart procduct */}
-                    <div className="flex grow flex-col">
-                        <div className="grow px-4 lg:px-10">
-                            <div className="divide-y divide-gray-100">
-                                {productCartCard.map((cartCard) => (
+
+                                {/* {productCartCard.map((cartCard) => (
                                     <ProductCartCard
                                         key={cartCard.id}
                                         cartCard={cartCard}
                                     />
-                                ))}
+                                ))} */}
                             </div>
+                            { (Object.keys(cartDetails).length > 0) ? 
                             <div className="flex items-center justify-between gap-5 border-y border-gray-100 py-5 text-lg/[22px] font-medium">
                                 <h2 className="text-gray">Total</h2>
-                                <p>$9,999.00</p>
+                                <p>${totalPrice}</p>
                             </div>
+: ''}
                         </div>
+                      { (Object.keys(cartDetails).length > 0) ? 
                         <Link
                             href="/cart"
                             className="sticky bottom-0 bg-white px-4 py-4 lg:px-10"
@@ -110,7 +138,8 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
                             <Button type="button" className="w-full">
                                 Check Out
                             </Button>
-                        </Link>
+                        </Link> : ''
+}
                     </div>
                 </div>
             </SheetContent>

@@ -39,7 +39,7 @@ export default function NavLinks() {
                     <NavLink href="/kids-cycle">Kids</NavLink>
                 </li>
                 <li>
-                    <NavLink href="/cycle-collections">collections</NavLink>
+                    <NavLink href="/bikes">Bikes</NavLink>
                 </li>
                 <li>
                     <NavLink href="/about-us">About us</NavLink>

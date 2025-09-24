@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
+import type { AppProps } from 'next/app';
 // import { Roboto_Serif } from 'next/font/google'
 import './globals.css'
 import helper from '@/lib/helper'
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
     title: 'PowerPedals',
@@ -32,11 +34,12 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
+
         <html lang="en">
             <body
                 className={`font-aeonik bg-white text-base/[19px] font-normal text-black antialiased`}
             >
-                {children}
+               <Providers> {children} </Providers>
             </body>
         </html>
     )
