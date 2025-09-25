@@ -18,36 +18,19 @@ import { useEffect, useState } from 'react'
 
 
 export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
-    const { cartDetails, removeItem, shouldDisplayCart, cartCount, totalPrice } = useShoppingCart();
+    const { cartDetails, cartCount } = useShoppingCart();
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
 
-    //     const productCartCard: IProductcartcard[] = [
-    //     {
-    //         id: 1,
-    //         image: '/images/cycle-hero-img1.png',
-    //         name: 'The Horizon Cruiser Bicycle',
-    //         price: '$9,999.00',
-    //     },
-    //     {
-    //         id: 2,
-    //         image: '/images/cycle-hero-img1.png',
-    //         name: 'Velocity Roadster',
-    //         price: '$8,999.00',
-    //     },
-    // ]
+    const productCartCard: IProductcartcard[] = []
 
-    let productCartCard: IProductcartcard[] = []
+    if( cartCount && (cartCount > 0)){
+            Object.values(cartDetails ?? {}).map((d) => (
+                productCartCard.push(d)
+            ))
+    }
 
-    cartCount && cartCount > 0 ? (
-        Object.values(cartDetails ?? {}).map((d) => (
-            productCartCard.push(d)
-        ))
 
-    )
-        : ''
-
-        console.log(productCartCard)
 
     useEffect(() => {
         setIsOpen(false)
@@ -110,11 +93,11 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
                             <div className="divide-y divide-gray-100">
                                 {cartCount && cartCount > 0 ? (
                                     <>
-                                         {productCartCard.map((cartCard) => (
-                                    <ProductCartCard
-                                        key={cartCard.id}
-                                        cartCard={cartCard}
-                                    />
+                                        {productCartCard.map((cartCard) => (
+                                            <ProductCartCard
+                                                key={cartCard.id}
+                                                cartCard={cartCard}
+                                            />
                                         ))}
 
                                     </>)

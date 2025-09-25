@@ -1,5 +1,4 @@
 import { useShoppingCart } from 'use-shopping-cart';
-import { formatCurrencyString } from "use-shopping-cart";
 import ProductCounter from '@/components/custom/product-counter'
 import { Button } from '@/components/ui/button'
 import {  IProductcartcard } from '@/types/product'

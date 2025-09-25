@@ -1,8 +1,7 @@
 
-import prisma from '@/lib/prisma'
 import CycleColors from '@/components/custom/cycle-colors'
 import FeedbackSwiper from '@/components/custom/feedback-swiper'
-import ProductCollectionSwiper from '@/components/custom/product-collection-swiper'
+// import ProductCollectionSwiper from '@/components/custom/product-collection-swiper'
 import ProductVariant from '@/components/custom/product-variant'
 import RideBanner from '@/components/custom/ridebanner'
 import { Button } from '@/components/ui/button'
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-    const users = await prisma.user.findMany();
+    // const users = await prisma.user.findMany();
     return (
         <>
             <div className="space-y-12 pb-12 lg:space-y-20 lg:pb-20">

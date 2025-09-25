@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import type { AppProps } from 'next/app';
+
 // import { Roboto_Serif } from 'next/font/google'
 import './globals.css'
 import helper from '@/lib/helper'

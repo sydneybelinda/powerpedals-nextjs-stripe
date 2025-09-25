@@ -14,7 +14,7 @@ import {
     PaginationPrevious,
 } from '@/components/ui/pagination'
 import helper from '@/lib/helper'
-import { ICard } from '@/types/product'
+// import { ICard } from '@/types/product'
 import { ArrowUpRight } from 'lucide-react'
 import { Metadata } from 'next'
 import Image from 'next/image'

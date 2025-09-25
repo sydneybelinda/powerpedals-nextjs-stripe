@@ -2,21 +2,19 @@
 import { useShoppingCart } from 'use-shopping-cart';
 import { Button } from '@/components/ui/button'
 import AddcartDrawer from '@/components/custom/add-cart-drawer'
-import helper from '@/lib/helper'
+
 
 import { Star } from 'lucide-react'
-import { Metadata } from 'next'
-import Image from 'next/image'
+
 import Link from 'next/link'
-// import {  IProductCartDetail} from '@/types/product'
+
 import { IBike } from '@/types/bike';
 
 export default function CycleDetailItem({item}: { item: IBike }) {
-  const { addItem, cartDetails, totalPrice } = useShoppingCart();
+  const { addItem } = useShoppingCart();
 
-//   const item = item.item
 
-  console.log(item)
+
 
   const handleAddToCart = () => {
     addItem(item); // Add the product to the cart

@@ -1,17 +1,17 @@
 import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
 
-import AddcartDrawer from '@/components/custom/add-cart-drawer'
+// import AddcartDrawer from '@/components/custom/add-cart-drawer'
 import CycleDetailSwiper from '@/components/custom/cycle-detail-swiper'
 import FeedbackSwiper from '@/components/custom/feedback-swiper'
 import RideBanner from '@/components/custom/ridebanner'
 import CycleDetailItem from '@/components/custom/cycle-detail-item';
-import { Button } from '@/components/ui/button'
+// import { Button } from '@/components/ui/button'
 import helper from '@/lib/helper'
-import { Star } from 'lucide-react'
+// import { Star } from 'lucide-react'
 import { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 export const metadata: Metadata = {
     title: 'Cycle details | PowerPedals',
