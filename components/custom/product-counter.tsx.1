@@ -1,29 +1,36 @@
 'use client'
-
+import { useShoppingCart } from 'use-shopping-cart';
 import { Input } from '@/components/ui/input'
+import {  IProductCartDetail } from '@/types/product'
 import { cn } from '@/lib/utils'
 import { Minus, Plus } from 'lucide-react'
 import React, { useState } from 'react'
 
 // type IVariants = 'default' | 'outline-solid' | 'black'
 
-function ProductCounter({ variant = 'black' }) {
-    const [count, setCount] = useState(1)
+
+function ProductCounter({ cartCard }: { cartCard: IProductCartDetail }) {
+    const variant = 'black'
+    const [quantity, setQuantity] = useState(1)
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = Number(event.target.value)
         if (!isNaN(newValue) && newValue >= 0) {
-            setCount(newValue)
+            setQuantity(newValue)
         }
     }
+     const { addItem, removeItem, cartDetails } = useShoppingCart();
+     console.log(cartCard)
 
     const handleIncrement = () => {
-        setCount(count + 1)
+        setQuantity(quantity + 1)
+        
+ 
     }
 
     const handleDecrement = () => {
-        if (count > 1) {
-            setCount(count - 1)
+        if (quantity > 1) {
+            setQuantity(quantity - 1)
         }
     }
 
@@ -31,7 +38,7 @@ function ProductCounter({ variant = 'black' }) {
         <div
             className={cn('inline-flex items-center sm:gap-1', {
                 '': variant === 'black',
-                '': variant === 'default',
+                // '': variant === 'default',
             })}
         >
             <button
@@ -45,7 +52,7 @@ function ProductCounter({ variant = 'black' }) {
             <Input
                 type="text"
                 onChange={handleInputChange}
-                value={count}
+                value={quantity}
                 className="w-6 lg:w-10 rounded-md border-0 bg-transparent px-0.5 py-1.5 lg:py-2.5 text-center text-sm/tight lg:text-lg/[22px] placeholder:text-sm/tight"
                 placeholder="1"
                 min="1"

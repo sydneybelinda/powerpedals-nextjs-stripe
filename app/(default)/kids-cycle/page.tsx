@@ -1,3 +1,4 @@
+import prisma from '@/lib/prisma'
 import FeedbackSwiper from '@/components/custom/feedback-swiper'
 import ProductCard from '@/components/custom/product-card'
 import RideBanner from '@/components/custom/ridebanner'
@@ -33,97 +34,10 @@ export const metadata: Metadata = {
     },
 }
 
-const card: ICard[] = [
-    {
-        id: 1,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
 
-    {
-        id: 2,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
 
-    {
-        id: 3,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-
-    {
-        id: 4,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 5,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 6,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 7,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 8,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 9,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 10,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 11,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 12,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-]
-
-export default function KidsCycle() {
+export default async function KidsCycle() {
+    const bikes = await prisma.bike.findMany();
     return (
         <>
             <div className="overflow-hidden bg-[#F6F6F6]">
@@ -181,9 +95,11 @@ export default function KidsCycle() {
 
             <div className="pt-14 lg:pt-20">
                 <div className="mx-auto grid max-w-[1852px] gap-4 px-4 sm:grid-cols-2 md:grid-cols-3 xl:gap-10 2xl:grid-cols-4 2xl:gap-14">
-                    {card.map((card) => (
-                        <ProductCard key={card.id} card={card} />
-                    ))}
+        {bikes.map((bike) => (
+         
+            <ProductCard key={bike.id} card={bike} />
+        
+        ))}
                 </div>
                 <Pagination className="mt-10 md:mt-14">
                     <PaginationContent>

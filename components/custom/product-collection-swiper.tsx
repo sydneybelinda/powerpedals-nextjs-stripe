@@ -1,78 +1,85 @@
 'use client'
 import ProductCard from '@/components/custom/product-card'
-import { ICard } from '@/types/product'
+import { ICard, IImage, IProductcartcard } from '@/types/product'
+import { IBike } from '@/types/bike'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { Navigation } from 'swiper/modules'
 
-const card: ICard[] = [
-    {
-        id: 1,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 2,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle2.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 3,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle3.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 4,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle4.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 5,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle5.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 6,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle1.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 7,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle2.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 8,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle3.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-    {
-        id: 9,
-        name: 'Velocity Roadster',
-        image: '/images/collection-cycle4.png',
-        alt: 'Velocity Roadster',
-        description: 'The Ultimate Ride for Road Enthusiasts',
-    },
-]
+// const card: IBike[] = [
+//     {
+//         id: 1,
+//         name: 'Velocity Roadster',
+//         image: '/images/collection-cycle1.png',
+//         alt: 'Velocity Roadster',
+//         description: 'The Ultimate Ride for Road Enthusiasts',
+//     },
+//     {
+//         id: 2,
+//         name: 'Velocity Roadster',
+//         image: '/images/collection-cycle2.png',
+//         alt: 'Velocity Roadster',
+//         description: 'The Ultimate Ride for Road Enthusiasts',
+//     },
+//     {
+//         id: 3,
+//         name: 'Velocity Roadster',
+//         image: '/images/collection-cycle3.png',
+//         alt: 'Velocity Roadster',
+//         description: 'The Ultimate Ride for Road Enthusiasts',
+//     },
+//     {
+//         id: 4,
+//         name: 'Velocity Roadster',
+//         image: '/images/collection-cycle4.png',
+//         alt: 'Velocity Roadster',
+//         description: 'The Ultimate Ride for Road Enthusiasts',
+//     },
+//     {
+//         id: 5,
+//         name: 'Velocity Roadster',
+//         image: '/images/collection-cycle5.png',
+//         alt: 'Velocity Roadster',
+//         description: 'The Ultimate Ride for Road Enthusiasts',
+//     },
+//     {
+//         id: 6,
+//         name: 'Velocity Roadster',
+//         image: '/images/collection-cycle1.png',
+//         alt: 'Velocity Roadster',
+//         description: 'The Ultimate Ride for Road Enthusiasts',
+//     },
+//     {
+//         id: 7,
+//         name: 'Velocity Roadster',
+//         image: '/images/collection-cycle2.png',
+//         alt: 'Velocity Roadster',
+//         description: 'The Ultimate Ride for Road Enthusiasts',
+//     },
+//     {
+//         id: 8,
+//         name: 'Velocity Roadster',
+//         image: '/images/collection-cycle3.png',
+//         alt: 'Velocity Roadster',
+//         description: 'The Ultimate Ride for Road Enthusiasts',
+//     },
+//     {
+//         id: 9,
+//         name: 'Velocity Roadster',
+//         image: '/images/collection-cycle4.png',
+//         alt: 'Velocity Roadster',
+//         description: 'The Ultimate Ride for Road Enthusiasts',
+//     },
+// ]
 
-export default function ProductCollectionSwiper() {
+export default function ProductCollectionSwiper({card}: { card: IProductcartcard }) {
+     let ca: IBike[]  = []
+
+             Object.values(card?? {}).map((d) => (
+            ca.push(d)
+        ))
+
     return (
         <>
             <div className="mb-5 flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
@@ -111,7 +118,7 @@ export default function ProductCollectionSwiper() {
                     prevEl: '.collection-button-prev',
                 }}
             >
-                {card.map((card, index) => (
+                {ca.map((card, index) => (
                     <SwiperSlide key={index} className="w-72! xl:w-[420px]!">
                         <ProductCard key={card.id} card={card} />
                     </SwiperSlide>

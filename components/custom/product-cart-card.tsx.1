@@ -1,20 +1,29 @@
-import { useShoppingCart } from 'use-shopping-cart';
-import { formatCurrencyString } from "use-shopping-cart";
+"use client"
 import ProductCounter from '@/components/custom/product-counter'
+import { useShoppingCart } from 'use-shopping-cart';
 import { Button } from '@/components/ui/button'
-import {  IProductcartcard } from '@/types/product'
+import {  IProductCartDetail } from '@/types/product'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function ProductCartCard({ cartCard }: { cartCard: IProductcartcard }) {
- 
-  const { removeItem } = useShoppingCart();
+type Props = {
+  data: IProductCartDetail;
+};
 
 
+
+export default function ProductCartCard({ data }: Props) {
+    const { cartDetails, removeItem, totalPrice } = useShoppingCart();
+
+
+    //const card = data[0]
+
+
+    console.log(data)
 
     return (
         <div className="flex gap-5 py-[30px] lg:items-center">
-            <Link
+             <Link
                 href="/cycle-details"
                 className="group relative flex size-20 shrink-0 items-center justify-center rounded-xl border border-black/10 bg-white sm:size-24 lg:size-[130px]"
             >
@@ -22,7 +31,7 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
                     1
                 </span>
                 <Image
-                    src={cartCard.image}
+                    src={data.image}
                     alt="Visa"
                     className="h-full w-full object-contain transition group-hover:opacity-80"
                     width={940}
@@ -36,41 +45,41 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
                             href="/cycle-details"
                             className="line-clamp-2 text-lg/5 transition hover:opacity-80 lg:text-[22px]/[26px]"
                         >
-                           {cartCard.name}
+                           {data.name}
                         </Link>
                         <h3 className="line-clamp-2 shrink-0 text-lg/[22px] font-medium lg:hidden lg:text-xl/6">
-                            {cartCard.price}
+                            { data.price}
                         </h3>
                     </div>
                     <div className="flex gap-1.5">
                         <div className="inline-flex h-full rounded-md border border-black/10 px-2 lg:rounded-xl lg:px-3">
-                            <ProductCounter />
+                            <ProductCounter
+                            cartCard={data} />
                         </div>
                         <Button
                             type="button"
                             variant="outline"
                             className="h-auto border-black/10 p-1.5 px-3 py-1 text-sm text-gray lg:hidden lg:text-base/[19px]"
-                         onClick={() => removeItem(cartCard.id.toString())}
+                            onClick={() => removeItem(data.id)}
                         >
-                            
                             Remove
                         </Button>
                     </div>
                 </div>
                 <div className="space-y-3 lg:space-y-5">
                     <h3 className="line-clamp-2 hidden shrink-0 text-lg/[22px] font-medium lg:block lg:text-xl/6">
-                        {cartCard.price}
+                        {data.price}
                     </h3>
                     <Button
                         type="button"
                         variant="outline"
                         className="hidden border-black/10 text-sm text-gray lg:block lg:text-base/[19px]"
-              onClick={() => removeItem(cartCard.id.toString())}
-             >
+                        onClick={() => removeItem(data.id)}
+                    >
                         Remove
                     </Button>
                 </div>
-            </div>
+            </div> 
         </div>
     )
 }

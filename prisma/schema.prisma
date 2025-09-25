@@ -33,13 +33,17 @@ model Post {
 model Bike {
   id               Int            @id @default(autoincrement())
   name             String
-  price            Int?
-  currency         String?
-  stock            Int?
-  weight           Int?
+  price            Int
+  currency         String
+  stock            Int
+  weight           Int
   image            String
   alt              String
-  slug             String?
-  description      String?
+  slug             String
+  description      String
+  sku              String
 }
+
+
+
 

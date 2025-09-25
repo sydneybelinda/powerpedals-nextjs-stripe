@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: 'Your journey to the genuine begins here.',
     openGraph: {
         ...helper.openGraphData,
-        title: 'Electric Bikes  | PowerPedals',
+        title: 'Electric Bikes Australia | PowerPedals',
         description: 'Your journey to the genuine begins here.',
         url: process.env.NEXT_PUBLIC_APP_URL + '/bikes',
         type: 'website',
@@ -35,96 +35,7 @@ export const metadata: Metadata = {
     },
 }
 
-// const card: ICard[] = [
-//     {
-//         id: 1,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-
-//     {
-//         id: 2,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-
-//     {
-//         id: 3,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-
-//     {
-//         id: 4,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-//     {
-//         id: 5,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-//     {
-//         id: 6,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-//     {
-//         id: 7,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-//     {
-//         id: 8,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-//     {
-//         id: 9,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-//     {
-//         id: 10,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-//     {
-//         id: 11,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-//     {
-//         id: 12,
-//         name: 'Velocity Roadster',
-//         image: '/images/collection-cycle1.png',
-//         alt: 'Velocity Roadster',
-//         description: 'The Ultimate Ride for Road Enthusiasts',
-//     },
-// ]
-export default async function CycleCollections() {
+export default async function Bikes() {
      const bikes = await prisma.bike.findMany();
     return (
         <>

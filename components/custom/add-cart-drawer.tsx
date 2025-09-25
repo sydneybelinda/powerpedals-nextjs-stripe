@@ -2,7 +2,6 @@
 import { useShoppingCart } from 'use-shopping-cart';
 import ProductCartCard from '@/components/custom/product-cart-card'
 import { Button } from '@/components/ui/button'
-import Image from 'next/image'
 import {
     Sheet,
     SheetContent,
@@ -11,36 +10,48 @@ import {
     SheetTrigger,
 } from '@/components/ui/sheet'
 import { IProductcartcard } from '@/types/product'
-import {  X } from 'lucide-react'
+import { X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
-const productCartCard: IProductcartcard[] = [
-    {
-        id: 1,
-        image: '/images/cycle-hero-img1.png',
-        name: 'The Horizon Cruiser Bicycle',
-        price: '$9,999.00',
-    },
-    {
-        id: 2,
-        image: '/images/cycle-hero-img1.png',
-        name: 'Velocity Roadster',
-        price: '$8,999.00',
-    },
-]
+
 
 export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
     const { cartDetails, removeItem, shouldDisplayCart, cartCount, totalPrice } = useShoppingCart();
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
 
+    //     const productCartCard: IProductcartcard[] = [
+    //     {
+    //         id: 1,
+    //         image: '/images/cycle-hero-img1.png',
+    //         name: 'The Horizon Cruiser Bicycle',
+    //         price: '$9,999.00',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: '/images/cycle-hero-img1.png',
+    //         name: 'Velocity Roadster',
+    //         price: '$8,999.00',
+    //     },
+    // ]
+
+    let productCartCard: IProductcartcard[] = []
+
+    cartCount && cartCount > 0 ? (
+        Object.values(cartDetails ?? {}).map((d) => (
+            productCartCard.push(d)
+        ))
+
+    )
+        : ''
+
+        console.log(productCartCard)
+
     useEffect(() => {
         setIsOpen(false)
     }, [pathname])
-
- //   console.log(cartDetails)
 
     return (
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -68,31 +79,9 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
                             <X className="size-5 shrink-0 lg:size-6" />
                         </button>
                     </div>
-                    
 
                     {/* Empty cart */}
-                    {/*  */}
-
-                    {/* add cart procduct */}
-                    <div className="flex grow flex-col">
-                        <div className="grow px-4 lg:px-10">
-                            <div className="divide-y divide-gray-100">
-{ (Object.keys(cartDetails).length > 0) ? 
-
-Object.keys(cartDetails).map((key) => {
-          const item = cartDetails[key];
-          return (
-                    <ProductCartCard 
-                        key={key}
-                        cartCard={item} 
-                        />
-           );
-        })
-
-
-
-     : 
-    <div className='p-5 min-h-[calc(100vh-97px)] flex items-center justify-center text-center flex-col '>
+                    {/* <div className='p-5 min-h-[calc(100vh-97px)] flex items-center justify-center text-center flex-col '>
                         <div className="max-w-32">
                             <Image
                                 src="/images/my-cart.png"
@@ -112,25 +101,31 @@ Object.keys(cartDetails).map((key) => {
                                 </Button>
                             </Link>
                         </div>
-                    </div> 
-    }
+                    </div>  */}
 
+                    {/* add cart procduct */}
 
-                                {/* {productCartCard.map((cartCard) => (
+                    <div className="flex grow flex-col">
+                        <div className="grow px-4 lg:px-10">
+                            <div className="divide-y divide-gray-100">
+                                {cartCount && cartCount > 0 ? (
+                                    <>
+                                         {productCartCard.map((cartCard) => (
                                     <ProductCartCard
                                         key={cartCard.id}
                                         cartCard={cartCard}
                                     />
-                                ))} */}
+                                        ))}
+
+                                    </>)
+                                    : ''
+                                }
                             </div>
-                            { (Object.keys(cartDetails).length > 0) ? 
                             <div className="flex items-center justify-between gap-5 border-y border-gray-100 py-5 text-lg/[22px] font-medium">
                                 <h2 className="text-gray">Total</h2>
-                                <p>${totalPrice}</p>
+                                <p>$9,999.00</p>
                             </div>
-: ''}
                         </div>
-                      { (Object.keys(cartDetails).length > 0) ? 
                         <Link
                             href="/cart"
                             className="sticky bottom-0 bg-white px-4 py-4 lg:px-10"
@@ -138,8 +133,7 @@ Object.keys(cartDetails).map((key) => {
                             <Button type="button" className="w-full">
                                 Check Out
                             </Button>
-                        </Link> : ''
-}
+                        </Link>
                     </div>
                 </div>
             </SheetContent>

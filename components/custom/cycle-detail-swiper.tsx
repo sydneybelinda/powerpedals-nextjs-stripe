@@ -2,6 +2,7 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
+import { IBike } from '@/types/bike'
 import 'swiper/css'
 import Image from 'next/image'
 import { IProductDetail } from '@/types/product'
@@ -23,7 +24,7 @@ const ProductDetail: IProductDetail[] = [
         alt: 'Cycle',
     },
 ]
-export default function CycleDetailSwiper() {
+export default function CycleDetailSwiper({item}: { item: IBike }) {
     return (
         <div className="relative flex h-full grow items-center justify-center bg-gray-100 px-4 md:px-12 lg:w-[calc(100%-500px)] xl:w-[calc(100%-600px)] 2xl:w-[calc(100%-716px)] 2xl:px-24">
             <button

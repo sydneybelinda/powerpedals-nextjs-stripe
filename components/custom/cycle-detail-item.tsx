@@ -3,12 +3,13 @@ import { useShoppingCart } from 'use-shopping-cart';
 import { Button } from '@/components/ui/button'
 import AddcartDrawer from '@/components/custom/add-cart-drawer'
 import helper from '@/lib/helper'
-import { IBike } from '@/types/product'
+
 import { Star } from 'lucide-react'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import {  IProductcartcard } from '@/types/product'
+// import {  IProductCartDetail} from '@/types/product'
+import { IBike } from '@/types/bike';
 
 export default function CycleDetailItem({item}: { item: IBike }) {
   const { addItem, cartDetails, totalPrice } = useShoppingCart();

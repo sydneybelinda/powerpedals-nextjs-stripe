@@ -3,7 +3,7 @@ import { ICard } from '@/types/product'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function ProductCard({ card }: { card: ICard }) {
+export default function ProductCard({ card }: { card: ICard}) {
     return (
         <div className="flex shrink-0 flex-col overflow-hidden rounded-[10px] bg-[url(/images/collection-bg.jpg)] bg-cover bg-no-repeat h-full">
             <Link href={"/bikes/" + card.slug} className="group flex h-52 items-center justify-center p-2 lg:h-60 xl:h-[348px] shrink-0">

@@ -28,38 +28,33 @@ export const metadata: Metadata = {
     },
 }
 
-const item = {
-    id:"id_Velocity_Roadster",
-    name:'Velocity Roadster',
-    description:'Velocity Roadster Test Bike',
-    price:9999,
-    currency:'AUD',
-    image: '/images/cycle-hero-img1.png',
-    quantity: 10
-}
 
 
 
-export default  async  function CycleDetails({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const bike = await prisma.bike.findFirst({
-    where: { slug: slug}
-  });
 
- if (!bike) {
-    notFound();
-  }
+export default async function CycleDetails({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const bike = await prisma.bike.findFirst({
+        where: { slug: slug }
+    });
 
+    if (!bike) {
+        notFound();
+    }
+
+    console.log(bike)
 
     return (
         <>
             <div className="flex flex-col lg:flex-row">
-                <CycleDetailSwiper />
-<CycleDetailItem
-item={bike}
+                <CycleDetailSwiper
+                item={bike}
+                 />
+                <CycleDetailItem
+                    item={bike}
 
 
-/>
+                />
             </div>
 
             <div className="py-14 lg:py-20">
