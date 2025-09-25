@@ -157,9 +157,9 @@ export default async function Home() {
 
                 <ProductVariant />
 
-                <div className="px-4">
+                {/* <div className="px-4">
                     <ProductCollectionSwiper />
-                </div>
+                </div> */}
             </div>
             <div className="flex h-screen flex-col md:min-h-[calc(100vh-90px)] md:flex-row">
                 <div className="relative flex h-full min-h-80 w-full grow items-end overflow-hidden transition-all duration-700 ease-in-out md:block md:h-auto md:min-h-0">
@@ -300,7 +300,7 @@ export default async function Home() {
                     }`,
                 }}
             />
-                <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center -mt-16">
+                {/* <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center -mt-16">
       <h1 className="text-4xl font-bold mb-8 font-[family-name:var(--font-geist-sans)] text-[#333333]">
         Superblog
       </h1>
@@ -311,7 +311,7 @@ export default async function Home() {
           </li>
         ))}
       </ol>
-    </div>
+    </div> */}
         </>
     )
 }
