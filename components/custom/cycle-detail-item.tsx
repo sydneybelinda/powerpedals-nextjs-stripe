@@ -11,7 +11,7 @@ import Link from 'next/link'
 import { IBike } from '@/types/bike';
 
 export default function CycleDetailItem({item}: { item: IBike }) {
-  const { addItem } = useShoppingCart();
+  const { addItem} = useShoppingCart();
 
 
 
@@ -31,13 +31,13 @@ export default function CycleDetailItem({item}: { item: IBike }) {
                                     <h2 className="text-2xl font-medium lg:text-3xl/10 xl:text-[40px]/[48px]">
                                         ${item.price}
                                     </h2>
-                                    <span className="inline-block rounded-lg bg-success px-1.5 py-0.5 text-xs font-medium text-white lg:py-1 xl:rounded-xl xl:text-sm/4">
+                                    {/* <span className="inline-block rounded-lg bg-success px-1.5 py-0.5 text-xs font-medium text-white lg:py-1 xl:rounded-xl xl:text-sm/4">
                                         50% Off
-                                    </span>
+                                    </span> */}
                                 </div>
-                                <p className="text-lg/[22px] font-medium text-gray line-through">
+                                {/* <p className="text-lg/[22px] font-medium text-gray line-through">
                                     $19,999.00
-                                </p>
+                                </p> */}
                             </div>
                         </div>
                         <div className="inline-flex items-center gap-3 rounded-xl px-2.5 py-2 text-sm/4 font-medium ring-1 ring-gray-100">
@@ -104,11 +104,7 @@ export default function CycleDetailItem({item}: { item: IBike }) {
                                 Product Description
                             </h3>
                             <p className="line-clamp-5 text-base/[23px]">
-                                Velocity Roadster is a lightweight, stylish bike
-                                built for speed, agility, and smooth urban rides.
-                                Ideal for cyclists who value performance, its
-                                aerodynamic design ensures effortless handling and a
-                                sleek look.
+                             {item.description}
                             </p>
                         </div>
                         <div className="flex gap-5">

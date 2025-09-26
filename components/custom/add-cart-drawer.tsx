@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { useShoppingCart } from 'use-shopping-cart';
 import ProductCartCard from '@/components/custom/product-cart-card'
 import { Button } from '@/components/ui/button'
@@ -9,7 +10,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet'
-import { IProductcartcard } from '@/types/product'
+
 import { X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -18,17 +19,9 @@ import { useEffect, useState } from 'react'
 
 
 export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
-    const { cartDetails, cartCount } = useShoppingCart();
+    const { cartDetails, cartCount,totalPrice } = useShoppingCart();
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
-
-    const productCartCard: IProductcartcard[] = []
-
-    if( cartCount && (cartCount > 0)){
-            Object.values(cartDetails ?? {}).map((d) => (
-                productCartCard.push(d)
-            ))
-    }
 
 
 
@@ -63,8 +56,39 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
                         </button>
                     </div>
 
-                    {/* Empty cart */}
-                    {/* <div className='p-5 min-h-[calc(100vh-97px)] flex items-center justify-center text-center flex-col '>
+                    {cartCount && (cartCount > 0) ? (
+                    <div className="flex grow flex-col">
+                        <div className="grow px-4 lg:px-10">
+                            <div className="divide-y divide-gray-100">
+
+            
+                                           {Object.values(cartDetails ?? {}).map((data) => (
+                                            <>
+                                            <ProductCartCard
+                                                key={data.id}
+                                                cartCard={data}
+                                            />
+                                    
+                                            </>
+                                        ) )}
+
+                            </div>
+                            <div className="flex items-center justify-between gap-5 border-y border-gray-100 py-5 text-lg/[22px] font-medium">
+                                <h2 className="text-gray">Total</h2>
+                                <p>${totalPrice}</p>
+                            </div>
+                        </div>
+                        <Link
+                            href="/cart"
+                            className="sticky bottom-0 bg-white px-4 py-4 lg:px-10"
+                        >
+                            <Button type="button" className="w-full">
+                                Check Out
+                            </Button>
+                        </Link>
+                    </div>
+                    ) : (
+                     <div className='p-5 min-h-[calc(100vh-97px)] flex items-center justify-center text-center flex-col '>
                         <div className="max-w-32">
                             <Image
                                 src="/images/my-cart.png"
@@ -84,40 +108,18 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
                                 </Button>
                             </Link>
                         </div>
-                    </div>  */}
+                    </div>  
+                    )
+
+
+                    }
+
+                    {/* Empty cart */}
+
 
                     {/* add cart procduct */}
 
-                    <div className="flex grow flex-col">
-                        <div className="grow px-4 lg:px-10">
-                            <div className="divide-y divide-gray-100">
-                                {cartCount && cartCount > 0 ? (
-                                    <>
-                                        {productCartCard.map((cartCard) => (
-                                            <ProductCartCard
-                                                key={cartCard.id}
-                                                cartCard={cartCard}
-                                            />
-                                        ))}
 
-                                    </>)
-                                    : ''
-                                }
-                            </div>
-                            <div className="flex items-center justify-between gap-5 border-y border-gray-100 py-5 text-lg/[22px] font-medium">
-                                <h2 className="text-gray">Total</h2>
-                                <p>$9,999.00</p>
-                            </div>
-                        </div>
-                        <Link
-                            href="/cart"
-                            className="sticky bottom-0 bg-white px-4 py-4 lg:px-10"
-                        >
-                            <Button type="button" className="w-full">
-                                Check Out
-                            </Button>
-                        </Link>
-                    </div>
                 </div>
             </SheetContent>
         </Sheet>

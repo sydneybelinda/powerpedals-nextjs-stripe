@@ -11,6 +11,7 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
 
 
 
+
     return (
         <div className="flex gap-5 py-[30px] lg:items-center">
             <Link
@@ -18,7 +19,7 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
                 className="group relative flex size-20 shrink-0 items-center justify-center rounded-xl border border-black/10 bg-white sm:size-24 lg:size-[130px]"
             >
                 <span className="absolute -right-2 -top-2 grid min-w-[24px] place-content-center rounded-full bg-gray px-1.5 py-0.5 font-bold text-white sm:h-[24px]">
-                    1
+                    {cartCard.quantity}
                 </span>
                 <Image
                     src={cartCard.image}
@@ -43,7 +44,9 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
                     </div>
                     <div className="flex gap-1.5">
                         <div className="inline-flex h-full rounded-md border border-black/10 px-2 lg:rounded-xl lg:px-3">
-                            <ProductCounter />
+                            <ProductCounter 
+                            cartCard={cartCard}
+                            />
                         </div>
                         <Button
                             type="button"

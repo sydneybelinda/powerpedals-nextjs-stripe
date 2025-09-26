@@ -6,6 +6,7 @@ export type IBike = {
     stock: number 
     weight: number
     image: string  
+    images: string[]
     alt: string 
     slug: string 
     sku: string

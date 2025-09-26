@@ -43,6 +43,7 @@ model Bike {
   stock            Int
   weight           Int
   image            String
+  images           String[]
   alt              String
   slug             String
   description      String

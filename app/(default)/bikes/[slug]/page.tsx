@@ -11,6 +11,7 @@ import helper from '@/lib/helper'
 // import { Star } from 'lucide-react'
 import { Metadata } from 'next'
 import Image from 'next/image'
+
 // import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -125,16 +126,11 @@ export default async function CycleDetails({ params }: { params: Promise<{ slug:
                             Discover the speed of the
                         </span>{' '}
                         <span className="font-roboto font-medium italic">
-                            Velocity Roadster
+                           {bike.name}
                         </span>
                     </h2>
                     <p className="mt-3 text-base text-gray md:text-lg">
-                        Discover the Speed of the Velocity Roadster—crafted for
-                        those who crave both speed and comfort. With its sleek
-                        design and advanced features, this bike offers a
-                        thrilling ride whether you’re commuting, racing, or
-                        exploring new routes. Experience unmatched performance
-                        and style on every journey.
+                        {bike.description}
                     </p>
                     <div className="mt-8 grid gap-x-4 gap-y-7 sm:grid-cols-2 md:gap-y-10 2xl:mt-14 2xl:gap-y-14">
                         <div className="space-y-2">

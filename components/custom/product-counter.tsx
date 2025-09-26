@@ -1,5 +1,6 @@
 'use client'
-
+import { useShoppingCart } from 'use-shopping-cart';
+import {  IProductcartcard } from '@/types/product'
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
 import { Minus, Plus } from 'lucide-react'
@@ -7,8 +8,11 @@ import React, { useState } from 'react'
 
 // type IVariants = 'default' | 'outline-solid' | 'black'
 
-function ProductCounter({ variant = 'black' }) {
-    const [count, setCount] = useState(1)
+function ProductCounter({ cartCard }: { cartCard: IProductcartcard}) {
+      const { decrementItem, incrementItem } = useShoppingCart();
+
+    const [count, setCount] = useState(cartCard.quantity)
+
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = Number(event.target.value)
@@ -19,19 +23,21 @@ function ProductCounter({ variant = 'black' }) {
 
     const handleIncrement = () => {
         setCount(count + 1)
+        incrementItem(cartCard.id)
     }
 
     const handleDecrement = () => {
         if (count > 1) {
             setCount(count - 1)
+            decrementItem(cartCard.id)
         }
     }
 
     return (
         <div
             className={cn('inline-flex items-center sm:gap-1', {
-                '': variant === 'black',
-                '': variant === 'default',
+                // '': variant === 'black',
+                // '': variant === 'default',
             })}
         >
             <button
@@ -53,6 +59,7 @@ function ProductCounter({ variant = 'black' }) {
             <button
                 type="button"
                 onClick={handleIncrement}
+                // onClick={handleIncrement}
                 className="bg-gray-300 text- grid size-5 shrink-0 place-content-center rounded-xl text-gray hover:text-black"
             >
                 <Plus className="size-4 lg:size-5" />

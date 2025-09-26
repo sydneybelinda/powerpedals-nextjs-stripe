@@ -5,25 +5,8 @@ import { Navigation, Pagination } from 'swiper/modules'
 import { IBike } from '@/types/bike'
 import 'swiper/css'
 import Image from 'next/image'
-import { IProductDetail } from '@/types/product'
 
-const ProductDetail: IProductDetail[] = [
-    {
-        id: 1,
-        image: '/images/cycle-hero-img1.png',
-        alt: 'Cycle',
-    },
-    {
-        id: 1,
-        image: '/images/cycle-hero-img2.png',
-        alt: 'Cycle',
-    },
-    {
-        id: 1,
-        image: '/images/cycle-hero-img3.png',
-        alt: 'Cycle',
-    },
-]
+
 
 // const ProductDetail: IProductDetail[] = []
 
@@ -31,11 +14,7 @@ export default function CycleDetailSwiper({item}: { item: IBike }) {
 
 
     console.log(item)
-    //     if( item){
-    //         Object.values(item ?? {}).map((d) => (
-    //             ProductDetail.push(d)
-    //         ))
-    // }
+
 
 
     return (
@@ -68,15 +47,15 @@ export default function CycleDetailSwiper({item}: { item: IBike }) {
                     clickable: true,
                 }}
             >
-                {ProductDetail.map((ProductDetail, index) => (
+                {item.images.map((image, index) => (
                     <SwiperSlide
                         key={index}
                         className="!flex items-center justify-center"
                     >
                         <div className="flex h-72 items-center justify-center sm:h-96 lg:h-[492px]">
                             <Image
-                                src={ProductDetail.image}
-                                alt={ProductDetail.alt}
+                                src={image}
+                                alt={image}
                                 className="h-full w-full object-contain"
                                 width={940}
                                 height={700}
