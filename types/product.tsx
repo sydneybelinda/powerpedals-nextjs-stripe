@@ -121,17 +121,16 @@ export type IProductcartcard = {
     id: any
     image?: any
     name: string
-    description: string
+    description?: string
     quantity: number
-    sku: string
     price: number
     currency: string
-    value: number
 }
 export type IImage = {
     id: number,
     name: string,
     image: string,
+    images: string[],
     alt: string,
     description: string,
 }

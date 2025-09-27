@@ -2,7 +2,7 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
-import { IBike } from '@/types/bike'
+import { IImage } from '@/types/product'
 import 'swiper/css'
 import Image from 'next/image'
 
@@ -10,7 +10,7 @@ import Image from 'next/image'
 
 // const ProductDetail: IProductDetail[] = []
 
-export default function CycleDetailSwiper({item}: { item: IBike }) {
+export default function CycleDetailSwiper({item}: { item: IImage }) {
 
 
     console.log(item)

@@ -1,5 +1,5 @@
 "use client"
-//import { IProductcartcard } from '@/types/product'
+import { IProductcartcard } from '@/types/product'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,9 +9,8 @@ import ProductCounter from './product-counter';
 
 
 
-import { IBike } from '@/types/bike';
 
-export default function MainCartItem({ item }: { item: IBike}) {
+export default function MainCartItem({ item }: { item: IProductcartcard}) {
     // const { decrementItem, incrementItem, cartDetails } = useShoppingCart();
 
     // const [count, setCount] = useState(1)
@@ -27,7 +26,7 @@ export default function MainCartItem({ item }: { item: IBike}) {
 
         <div className="flex items-start gap-5 lg:items-center">
             <Link
-                href="/cycle-details"
+                href={"/bikes/"}
                 className="group relative flex size-16 shrink-0 items-center justify-center rounded-xl border border-black/10 bg-white sm:size-20 lg:size-[100px]"
             >
                 <span className="absolute -right-2 -top-2 grid min-w-[24px] place-content-center rounded-full bg-gray px-1.5 py-0.5 font-bold text-white sm:h-[24px]">
@@ -47,7 +46,7 @@ export default function MainCartItem({ item }: { item: IBike}) {
                     href="/cycle-details"
                     className="line-clamp-2 font-medium transition hover:opacity-80 lg:line-clamp-3 lg:text-lg/[22px]"
                 >
-                    Velocity Roadster
+                    {item.description}
                 </Link>
                             <div className='pro'>
             <ProductCounter
@@ -55,7 +54,7 @@ export default function MainCartItem({ item }: { item: IBike}) {
             />
             </div>
                 <h3 className="line-clamp-2 shrink-0 font-medium lg:text-lg/[22px]">
-                    ${item.value}
+                    ${item.price}
                 </h3>
             </div>
         </div>

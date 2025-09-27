@@ -10,4 +10,5 @@ export type IBike = {
     slug: string 
     sku: string
     description: string 
+    quantity: number
 }
