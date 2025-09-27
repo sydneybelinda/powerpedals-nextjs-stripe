@@ -11,7 +11,7 @@ import helper from '@/lib/helper'
 // import { Star } from 'lucide-react'
 import { Metadata } from 'next'
 import Image from 'next/image'
-import { IBike } from "@/types/bike";
+
 
 // import Link from 'next/link'
 
@@ -37,9 +37,8 @@ export const metadata: Metadata = {
 export default async function CycleDetails({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
-    let bike:IBike | any
 
-    bike = await prisma.bike.findFirst({
+    const bike = await prisma.bike.findFirst({
         where: { slug: slug }
     });
 

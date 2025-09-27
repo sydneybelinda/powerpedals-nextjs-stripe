@@ -46,7 +46,7 @@ export default function MainCartItem({ item }: { item: IProductcartcard}) {
                     href="/cycle-details"
                     className="line-clamp-2 font-medium transition hover:opacity-80 lg:line-clamp-3 lg:text-lg/[22px]"
                 >
-                    {item.description}
+                    {item.name}
                 </Link>
                             <div className='pro'>
             <ProductCounter

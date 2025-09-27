@@ -48,6 +48,7 @@ model Bike {
   slug             String
   description      String
   sku              String
+  quantity         Int
 }
 
 
