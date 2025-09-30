@@ -48,6 +48,8 @@ export default function MainCart() {
    
 
       useEffect(() => {
+
+       
    const getData = async () => {
    
             try{
@@ -71,7 +73,8 @@ export default function MainCart() {
     
     }
 
-      getData()
+
+      if (totalPrice && totalPrice > 0){ getData()}
       
       
 }, [totalPrice]);

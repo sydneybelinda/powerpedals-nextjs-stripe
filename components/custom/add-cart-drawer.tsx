@@ -19,7 +19,7 @@ import { useEffect, useState } from 'react'
 
 
 export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
-    const { cartDetails, cartCount, totalPrice} = useShoppingCart();
+    const { cartDetails, cartCount, formattedTotalPrice} = useShoppingCart();
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
 
@@ -75,7 +75,7 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
                             </div>
                             <div className="flex items-center justify-between gap-5 border-y border-gray-100 py-5 text-22px font-medium">
                                 <h2 className="text-gray">Total</h2>
-                                <p className='tp'>${totalPrice}</p>
+                                <p className='tp'>{formattedTotalPrice}</p>
                             </div>
                         </div>
                         <Link
