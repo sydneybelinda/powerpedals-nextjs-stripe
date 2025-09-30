@@ -34,11 +34,11 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
                     <div className="space-y-1.5">
                         <Link
                             href={"/bike/" + cartCard.slug}
-                            className="line-clamp-2 text-lg/5 transition hover:opacity-80 lg:text-[22px]/[26px]"
+                            className="line-clamp-2 text-right text-lg/5 transition hover:opacity-80 lg:text-[22px]/[26px]"
                         >
                            {cartCard.name}
                         </Link>
-                        <h3 className="line-clamp-2 shrink-0 text-lg/[22px] font-medium lg:hidden lg:text-xl/6">
+                        <h3 className="line-clamp-2 text-right shrink-0 text-lg/[22px] font-medium lg:hidden lg:text-xl/6">
                              ${(cartCard.price/100)} 
                             
                         </h3>

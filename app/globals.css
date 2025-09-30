@@ -159,9 +159,6 @@ layer(base);
     background-color: #24b3df;
 }
 
-.line-clamp-2 {
-    text-align: right;
-}
 .text-22px {
     font-size: 22px
 }
@@ -198,4 +195,8 @@ layer(base);
 
 .display-none {
     display: none
+}
+
+.text-right {
+    text-align: right;
 }
