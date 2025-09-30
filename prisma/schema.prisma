@@ -1,17 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-//generator client {
-//  provider = "prisma-client-js"
-//  output   = "../app/generated/prisma"
-// }
-
 generator client {
   provider = "prisma-client-js"
-  // no custom output!
 }
 
 datasource db {
@@ -36,21 +24,20 @@ model Post {
 }
 
 model Bike {
-  id               Int            @id @default(autoincrement())
-  name             String
-  price            Int
-  currency         String
-  stock            Int
-  weight           Int
-  image            String
-  images           String[]
-  alt              String
-  slug             String
-  description      String
-  sku              String
-  quantity         Int
+  id          Int      @id @default(autoincrement())
+  name        String
+  image       String
+  alt         String
+  description String
+  slug        String
+  currency    String
+  price       Int
+  stock       Int
+  weight      Int
+  sku         String
+  images      String[]
+  quantity    Int
+  value       Int
+  productId   String?
+  priceId     String?
 }
-
-
-
-

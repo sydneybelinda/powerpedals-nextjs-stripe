@@ -11,9 +11,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
       stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string}
       currency="AUD" // or your desired currency
       shouldPersist={true} // or false
-    successUrl="http://localhost:3000/success"
-      cancelUrl="http://localhost:3000/cancel"
-       billingAddressCollection={true}
+      successUrl={`${process.env.NEXT_PUBLIC_APP_URL}/success`}
+      cancelUrl={`${process.env.NEXT_PUBLIC_APP_URL}/cancel`}
+      billingAddressCollection={true}
     >
       {children}
     </CartProvider>

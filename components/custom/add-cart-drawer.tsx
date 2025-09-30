@@ -63,13 +63,13 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
 
             
                                            {Object.values(cartDetails ?? {}).map((data) => (
-                                            <>
+                                         
                                             <ProductCartCard
                                                 key={data.id}
                                                 cartCard={data}
                                             />
                                     
-                                            </>
+                                     
                                         ) )}
 
                             </div>
