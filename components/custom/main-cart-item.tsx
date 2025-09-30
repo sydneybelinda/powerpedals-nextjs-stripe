@@ -26,7 +26,7 @@ export default function MainCartItem({ item }: { item: IProductcartcard}) {
 
         <div className="flex items-start gap-5 lg:items-center">
             <Link
-                href={"/bikes/"}
+                href={"/bikes/" + item.slug}
                 className="group relative flex size-16 shrink-0 items-center justify-center rounded-xl border border-black/10 bg-white sm:size-20 lg:size-[100px]"
             >
                 <span className="absolute -right-2 -top-2 grid min-w-[24px] place-content-center rounded-full bg-gray px-1.5 py-0.5 font-bold text-white sm:h-[24px]">
@@ -43,7 +43,7 @@ export default function MainCartItem({ item }: { item: IProductcartcard}) {
 
             <div className="flex grow flex-col justify-between gap-1.5 sm:flex-row sm:items-center sm:gap-5">
                 <Link
-                    href="/cycle-details"
+                    href={"/bikes/" + item.slug}
                     className="line-clamp-2 font-medium transition hover:opacity-80 lg:line-clamp-3 lg:text-lg/[22px]"
                 >
                     {item.name}
@@ -54,7 +54,7 @@ export default function MainCartItem({ item }: { item: IProductcartcard}) {
             />
             </div>
                 <h3 className="line-clamp-2 shrink-0 font-medium lg:text-lg/[22px]">
-                    ${item.price}
+                    ${(item.price/100)}
                 </h3>
             </div>
         </div>

@@ -1,5 +1,5 @@
 "use client";
-
+import { useShoppingCart } from "use-shopping-cart";
 import { useState } from "react";
 import {
   PaymentElement,
@@ -21,6 +21,7 @@ function PaymentForm() {
 
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const {formattedTotalPrice} = useShoppingCart()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,6 +41,8 @@ function PaymentForm() {
         return_url: process.env.NEXT_PUBLIC_APP_URL + '/success',
       },
     });
+
+  
 
     // This point will only be reached if there is an immediate error when
     // confirming the payment. Otherwise, your customer will be redirected to
@@ -62,9 +65,9 @@ function PaymentForm() {
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement id="payment-element" options={paymentElementOptions} />
-      <button disabled={isLoading || !stripe || !elements} id="submit">
+      <button disabled={isLoading || !stripe || !elements} id="submit" className="submit-cart">
         <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+          {isLoading ? <div className="spinner" id="spinner"></div> : <div>Pay <span className="fprice">{formattedTotalPrice}</span> now</div>}
         </span>
       </button>
       {/* Show any error or success messages */}

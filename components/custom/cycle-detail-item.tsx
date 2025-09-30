@@ -29,7 +29,7 @@ export default function CycleDetailItem({item}: { item: IBike }) {
                             <div>
                                 <div className="mb-1 flex items-center gap-3 xl:mb-3">
                                     <h2 className="text-2xl font-medium lg:text-3xl/10 xl:text-[40px]/[48px]">
-                                        ${item.price}
+                                        ${(item.price/100)}
                                     </h2>
                                     {/* <span className="inline-block rounded-lg bg-success px-1.5 py-0.5 text-xs font-medium text-white lg:py-1 xl:rounded-xl xl:text-sm/4">
                                         50% Off

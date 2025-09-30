@@ -24,6 +24,7 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
     const pathname = usePathname()
 
 
+    const tp = totalPrice || 0
 
     useEffect(() => {
         setIsOpen(false)
@@ -73,9 +74,9 @@ export default function AddcartDrawer({ button }: { button: React.ReactNode }) {
                                         ) )}
 
                             </div>
-                            <div className="flex items-center justify-between gap-5 border-y border-gray-100 py-5 text-lg/[22px] font-medium">
+                            <div className="flex items-center justify-between gap-5 border-y border-gray-100 py-5 text-22px font-medium">
                                 <h2 className="text-gray">Total</h2>
-                                <p>${totalPrice}</p>
+                                <p className='tp'>${(tp/100)}</p>
                             </div>
                         </div>
                         <Link

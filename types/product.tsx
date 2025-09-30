@@ -125,6 +125,7 @@ export type IProductcartcard = {
     quantity: number
     price: number
     currency: string
+    slug?: string
 }
 export type IImage = {
     id: number

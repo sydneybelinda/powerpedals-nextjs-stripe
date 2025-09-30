@@ -158,3 +158,44 @@ layer(base);
 .bg-success {
     background-color: #24b3df;
 }
+
+.line-clamp-2 {
+    text-align: right;
+}
+.text-22px {
+    font-size: 22px
+}
+
+.submit-cart{    
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px blue solid;
+    border-radius: 5px;
+    background: blue;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#details-table {
+    display: none;
+}
+#payment-status {
+    text-align: center;
+    padding: 50px;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 1;
+    align-items: center;
+    align-self: center;
+}
+#status-icon {
+    margin-bottom: 12px;
+}
+
+.display-none {
+    display: none
+}

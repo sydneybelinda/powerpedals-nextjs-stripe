@@ -5,7 +5,7 @@ import {stripe} from "../../../../lib/stripe"
       const { cartDetails } = await req.json();
 
 
-      console.log(cartDetails)
+      // console.log(cartDetails)
 
       const line_items = Object.values(cartDetails).map((item) => ({
         price_data: {
@@ -18,7 +18,7 @@ import {stripe} from "../../../../lib/stripe"
         quantity: item.quantity,
       }));
 
-      console.log(line_items[0].price_data)
+      // console.log(line_items[0].price_data)
 
       try {
         const session = await stripe.checkout.sessions.create({

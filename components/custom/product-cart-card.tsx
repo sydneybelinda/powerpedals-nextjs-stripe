@@ -15,7 +15,7 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
     return (
         <div className="flex gap-5 py-[30px] lg:items-center">
             <Link
-                href="/cycle-details"
+                href={"/bike/" + cartCard.slug}
                 className="group relative flex size-20 shrink-0 items-center justify-center rounded-xl border border-black/10 bg-white sm:size-24 lg:size-[130px]"
             >
                 <span className="absolute -right-2 -top-2 grid min-w-[24px] place-content-center rounded-full bg-gray px-1.5 py-0.5 font-bold text-white sm:h-[24px]">
@@ -23,7 +23,7 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
                 </span>
                 <Image
                     src={cartCard.image}
-                    alt="Visa"
+                    alt={cartCard.name}
                     className="h-full w-full object-contain transition group-hover:opacity-80"
                     width={940}
                     height={700}
@@ -33,13 +33,14 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
                 <div className="space-y-3 lg:space-y-5">
                     <div className="space-y-1.5">
                         <Link
-                            href="/cycle-details"
+                            href={"/bike/" + cartCard.slug}
                             className="line-clamp-2 text-lg/5 transition hover:opacity-80 lg:text-[22px]/[26px]"
                         >
                            {cartCard.name}
                         </Link>
                         <h3 className="line-clamp-2 shrink-0 text-lg/[22px] font-medium lg:hidden lg:text-xl/6">
-                            {cartCard.price}
+                             ${(cartCard.price/100)} 
+                            
                         </h3>
                     </div>
                     <div className="flex gap-1.5">
@@ -61,7 +62,7 @@ export default function ProductCartCard({ cartCard }: { cartCard: IProductcartca
                 </div>
                 <div className="space-y-3 lg:space-y-5">
                     <h3 className="line-clamp-2 hidden shrink-0 text-lg/[22px] font-medium lg:block lg:text-xl/6">
-                        {cartCard.price}
+                        ${(cartCard.price/100)} 
                     </h3>
                     <Button
                         type="button"
